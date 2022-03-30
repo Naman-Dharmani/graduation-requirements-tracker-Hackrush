@@ -1,0 +1,57 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+  <%- include('includes/navigation.ejs') %>
+  <div class="container-md py-5">
+    <h1 class="mt-4 text-center">User Registration</h1>
+    <div>
+      <form action="/user/register" method="POST" class="mx-auto pt-4" style="max-width: 450px;">
+        <div class="mb-3">
+          <label for="name" class="form-label fs-5">Name</label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label fs-5">Email</label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+          <label for="rollNo" class="form-label fs-5">Roll No.</label>
+          <input type="text" name="rollNo" class="form-control" id="rollNo" placeholder="Enter your roll no">
+        </div>
+        <div class="mb-3">
+          <label for="department" class="form-label fs-5">Department</label>
+          <select name="dept" id="department" class="form-select">
+            <option value="CS">Computer Science & Engineering</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="CE">Civil Engineering</option>
+            <option value="CL">Chemical Engineering</option>
+            <option value="MSE">Materials Science & Engineering</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="semNo" class="form-label fs-5">Current Semester</label>
+          <select class="form-select" id="semNo" name="semNo">
+            <option value="1" selected>Sem 1</option>
+            <% for (var i=2; i <= 8; i++){ %>
+              <option value=<%= i %>>Sem <%= i %></option>
+            <% } %>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label fs-5">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+        <div class="mb-3">
+          <label for="password2" class="form-label fs-5">Confirm Password</label>
+          <input type="password" name="password2" class="form-control" id="password2" placeholder="Confirm your password">
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="mt-2 btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<%- include('includes/end.ejs') %>

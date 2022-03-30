@@ -1,0 +1,60 @@
+<%- include('includes/head.ejs') %>
+  </head>
+
+  <body>
+    <%- include('includes/navigation.ejs') %>
+      <div class="container-md pt-5">
+        <h1 class="mt-4 text-center">My Courses</h1>
+        <div class="mt-5 mx-auto accordion" id="accordionExample" style="max-width: 800px;">
+          <% for(var i=1; i <=8; i++){ %>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading<%= i %>">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse<%= i %>" aria-expanded="false" aria-controls="collapse<%= i %>" style="position: relative;">
+                  Semester <%= i %>
+                  <% if(~[5,6,7,8].indexOf(i)){ %>
+                    <a href="#" class="btn btn-outline-success btn-sm" style="position: absolute; right: 160px;">Plan</a>
+                    <% } %>
+                  <a href="#" class="btn btn-primary btn-sm" style="position: absolute; right: 60px;">Credits: X</a>
+                </button>
+              </h2>
+              <div id="collapse<%= i %>" class="accordion-collapse collapse" aria-labelledby="heading<%= i %>">
+                <div class="accordion-body">
+                  <table class="text-center table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Credits</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">HS 191</td>
+                        <td>Intro to Writing - 1</td>
+                        <td>HS</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">HS 192</td>
+                        <td>Intro to Writing - 2</td>
+                        <td>HS</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">HS 211</td>
+                        <td>Intro to Philosophy</td>
+                        <td>HS</td>
+                        <td>4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <% } %>
+        </div>
+      </div>
+
+<%- include('includes/end.ejs') %>

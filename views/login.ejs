@@ -1,0 +1,25 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+  <%- include('includes/navigation.ejs') %>
+  <div class="container-md pt-5">
+    <h1 class="mt-4 text-center">User Login</h1>
+    <div class="mt-5">
+      <form action="/user/login" method="POST" class="mx-auto pt-4" style="max-width: 450px;">
+        <div class="mb-3">
+          <label for="userId" class="form-label fs-5">User Id</label>
+          <input type="text" name="rollNo" class="form-control" id="userId" placeholder="Enter your roll no">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label fs-5">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password">
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="mt-2 btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<%- include('includes/end.ejs') %>
